@@ -19,8 +19,11 @@ dependencies {
     implementation(project(":core:common"))
     implementation(project(":core:protocol"))
     implementation(project(":core:network"))
+    implementation(project(":core:audio"))
+
     implementation(libs.kotlinx.coroutines.android)
     implementation(libs.kotlinx.serialization.json)
+
     testImplementation(libs.junit)
     testImplementation(libs.kotlinx.coroutines.test)
 }
