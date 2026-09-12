@@ -248,10 +248,12 @@ class VoiceSession(
                 pcm.copyOf(read)  // partial frame — skip effect this tick
             }
 
-            val encoded = runCatching { codec.encode(processed) }.getOrElse {
-                logEvent(TAG, LogEvents.CODEC_ERROR, "encode: ${it.message}")
+            val encodedResult = runCatching { codec.encode(processed) }
+            if (encodedResult.isFailure) {
+                logEvent(TAG, LogEvents.CODEC_ERROR, "encode: ${encodedResult.exceptionOrNull()?.message}")
                 continue
             }
+            val encoded = encodedResult.getOrNull() ?: continue
             if (encoded.isEmpty()) continue // codec still priming
 
             val voice = VoicePacket.pack(sequence++, now(), encoded)
