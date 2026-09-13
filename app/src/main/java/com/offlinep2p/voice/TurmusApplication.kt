@@ -1,4 +1,4 @@
-package com.offlinep2p.turmus
+package com.offlinep2p.voice
 
 import android.app.Application
 import com.offlinep2p.core.common.DebugLogger
