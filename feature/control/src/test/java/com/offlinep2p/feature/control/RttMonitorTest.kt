@@ -8,7 +8,7 @@ import org.junit.Test
 class RttMonitorTest {
 
     /** Controllable monotonic clock (nanoseconds). */
-    private class FakeClock(var ns: Long = 0L) { fun ns(): Long = ns }
+    private class FakeClock(var ns: Long = 0L) { fun ns(): Long = _ns }
 
     @Test
     fun `pong matching our ping updates RTT`() {
