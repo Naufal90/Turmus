@@ -24,7 +24,7 @@ class MusicSyncCalculatorTest {
             hostPositionMs = 10_000,
             hostTimestampMs = 1_000,
             nowTimestampMs = 1_040,
-            localPositionMs = 10_800,
+            localPositionMs = 10_100,
             oneWayLatencyMs = 15,
         )
         assertEquals(MusicSyncCalculator.Action.GentleSpeedCorrection, action)
