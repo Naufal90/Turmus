@@ -29,11 +29,9 @@
     <uses-permission android:name="android.permission.NEARBY_WIFI_DEVICES"
         android:usesPermissionFlags="neverForLocation"
         tools:targetApi="33" />
-    <!-- Fine location needed for Nearby on older Android versions -->
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"
-        android:maxSdkVersion="32" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"
-        android:maxSdkVersion="32" />
+    <!-- Location required by Nearby Connections -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <!-- Local music access -->
     <uses-permission android:name="android.permission.READ_MEDIA_AUDIO"
